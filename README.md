@@ -1,2 +1,2 @@
-# Bruteforce-Knapsack-Algorithm
-Web-based Knapsack Algorithm Calculator
+# daa-project
+this is gui for knapsack

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SackCal</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/do3op0083/image/upload/v1659246701/icons8-money-bag-16_vkz4zq.png">
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      1
+      href="../DAA_PRJ/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../DAA_PRJ/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../DAA_PRJ/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Then include bootstrap js -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <script src="index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container">
+        <div class="accent-title">  <img src="https://res.cloudinary.com/do3op0083/image/upload/v1659244936/DAA/DAALOGO-removebg-preview_bto8vn.png" alt="" width="250" /> </div>
+      
+        <ul class="left">
+          
+        
+         
+          
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#approaches">APPROACH</a></li>
+          <li><a href="#Calculator">KNAPSACK</a></li>
+          <li><a href="#programmers">PROGRAMMERS</a></li>
+          <li><a href="login.html">LOGIN</a></li>
+          
+        </ul>
+      </div>
+    </header>
+    <main>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id ="home"></div>
+      <div class="contain">
+        <div class="accent-title">Knapsack Problem</div>
+
+        <div>
+
+          an optimization problem used to illustrate both problem and solution. It derives its
+name from a scenario where one is constrained in the number of items that can be
+placed inside a fixed-size knapsack. Given a set of items with specific weights and values,
+the aim is to get as much value into the knapsack as possible given the weight constraint
+of the knapsack.
+        </div>
+      </div>
+     
+      <div class="contain">
+        <div id="approaches">
+        <div class="accent-title">Problem Statement</div>
+
+        <div>
+
+          Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
+        </div></div>
+      </div>
+      <div class="contain">
+        <div class="accent-title">
+          Brute Force
+        </div>
+        <div>
+          01 knapsnack is the most basic problem to understand 2-d 
+          Dynamic programming.AS we have designed a O1 knapsack calculator ,Here is a brief overview of it
+          Brute force approach-Aim for this problem is to find a subset of weight array which maximizes the profit .so for each entity we have option to whether select it or not.
+          So start with either first or last element for example         weight array wt[]={2,7,3,4},weight of knapsack -11 and profit array pr[]={5,20,20,10)
+          Let f(x,y) denote that we have x elements to choose from and y is the weight left in knapsack.so problem can be break down recursively as
+          
+          F(4,11)=max(inc,exc)  i.e 
+          Inc= price[0]+f(3,11-wt[0])
+          Exc=f(3,11)
+          As it is a recursive method .it will take lot of computational time .TO solve this problem we will optimize it with dp
+          
+          
+        </div>
+      </div>
+      <div class="contain">
+        <div class="accent-title">
+          DP Approach
+        </div>
+        <div>
+          In every recursive function call we will pass a dp[][] array .
+          Dp[x][y]=means f(x,y)
+          If dp[x][y]!=-1 then we already have f(x,y) thus saves some computation otherwise call f(x,y).
+       
+        </div>
+      </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="Calculator"></div>
+    <section class="section section-dark rad">
+      <div class="text-center page-header">
+        <h2 id="kcap" class="grad8">KNAPSACK MAX PROFIT CALCULATOR</h2>
+      </div>
+      <div class="container hide1" >
+        <div class="row justify-content-md-center mrg1">
+          <div class="col-md-6 ">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <!-- <span class="glyphicon glyphicon-shopping-cart"></span> -->
+              </div>
+              <input
+                class="form-control"
+                id="capacity"
+                type="number"
+                placeholder="Enter Knapsack Capacity"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 center-block mrg2">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <!-- <span
+                  class="glyphicon glyphicon-align-left"
+                  aria-hidden="true"
+                ></span> -->
+              </div>
+              <input
+                class="form-control"
+                id="rows"
+                type="number"
+                placeholder="Enter number of Items"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            type="button"
+            class="generateTable btn genr btn-table btn-grad"
+            onclick="createTable();"
+          >
+            Generate Table
+          </button>
+        </div>
+        <div class="table" id="wrapper"></div>
+        <div class="text-center">
+          <button
+            type="button"
+            class="generateResult btn btn-calculate btn-grad2"
+            id="butt"
+            onclick="generateResult();"
+          >
+            Calculate
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="container text-center">
+        <div class="result">
+          <div class="resultContainer" id="resultContainer1">
+            <h2 id="kcap" class="grad8" style="font-size: 40px">
+              Knapsack Solution
+            </h2>
+            <div class="resultContainer2">
+              <h4>Profit</h4>
+              <h2 id="kpProfit" class="gradx"></h2>
+              <h4>Weight</h4>
+              <h2 id="kpWeight" class="gradx"></h2>
+             
+    
+              <h4>Max Profit</h4>
+              <h2 id="kpResultantProfit" class="gradx"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+<main>
+
+</main>
+
+    </section>
+
+    <main>
+      <div id ="programmers"></div>
+      <h2 id="kcap" class="grad8">PROGRAMMERS</h2>
+      <section>
+      <div class="container1">
+        <div class="box">
+        <div class="image">
+           <img src="https://res.cloudinary.com/do3op0083/image/upload/v1659156668/DAA/193479488_5533155456756734_8129241632589931623_n_ra4djf.jpg" alt="">
+          </div>
+          <div class="name_job"> Gallardo, Matthew</div>
+         
+          <h5 style="color:black ;">Hi! I'm one of the developers for this project. If you have any questions or concerns, feel free to contact us!</h5> 
+          <div class="btns">
+            <button onClick="window.location.href='https://www.facebook.com/MatthewGallardoo'">Socials</button>
+            <button onClick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=gallardomatthew8@gmail.com'">Email</button>
+          </div>
+        </div>
+        <div class="box">
+        <div class="image">
+           <img src="https://res.cloudinary.com/do3op0083/image/upload/v1659156696/DAA/290636032_1065904690983184_3821571460155224237_n_cxmooi.jpg" alt="">
+          </div>
+          <div class="name_job">Prado, Clarence</div>
+         
+          <h5 style="color:black ;">Hi! I'm one of the developers for this project.If you have any questions or concerns, feel free to contact us!</h5> 
+          <div class="btns">
+            <button onClick="window.location.href='https://www.facebook.com/clarence.prado.33'">Socials</button>
+            <button onClick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=gallardomatthew8@gmail.com'">Email</button>
+          </div>
+        </div>
+       <div class="box">
+        <div class="image">
+           <img src="https://res.cloudinary.com/do3op0083/image/upload/v1659160902/DAA/270149616_3104617039793856_8850392252097236790_n_li9xsh.jpg" alt="">
+          </div>
+          <div class="name_job">Homillano. Pleroma</div>
+          
+          <h5 style="color:black ;">Hi! I'm one of the developers for this project. If you have any questions or concerns, feel free to contact us!</h5> 
+          <div class="btns">
+            <button onClick="window.location.href='https://www.facebook.com/pleromahomillano12'" >Socials</button>
+            <button onClick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=gallardomatthew8@gmail.com'">Email</button>
+          </div>
+        </div>
+        &nbsp;&nbsp;
+          <div class="box">
+          <div class="image">
+             <img src="https://res.cloudinary.com/do3op0083/image/upload/v1659159119/DAA/291987762_1020062805322712_328428161439574027_n_puiwnk.jpg" alt="">
+            </div>
+            <div class="name_job">Morales. Ina Cassandra</div>
+           
+            <h5 style="color:black ;">Hi! I'm one of the developers for this project. If you have any questions or concerns, feel free to contact us!</h5> 
+            <div class="btns">
+              <button onClick="window.location.href='https://www.facebook.com/inacassandra.morales.33' ">Socials</button>
+              <button onClick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=inamorales06@gmail.com'">Email</button>
+            </div>
+          </div>
+          <div class="box">
+          <div class="image">
+             <img src="https://res.cloudinary.com/do3op0083/image/upload/v1659160152/DAA/295794133_1744256632622227_5382480508916077558_n_fnv9za.jpg" alt="">
+            </div>
+            <div class="name_job">Martinez ,Danniel</div>
+           
+            <h5 style="color:black ;">Hi! I'm one of the developers for this project. If you have any questions or concerns, feel free to contact us!</h5> 
+            <div class="btns">
+              
+              <button onClick="window.location.href='https://www.facebook.com/shimeypey'">Socials</button>
+              <button onClick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=dandanmartnez16@gmail.com'">Email</button>
+            </div>
+          </div>
+       
+         
+          </div>
+        </section>
+
+
+   
+        </body>
+    <footer class="footer">
+      
+      
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#Calculator">Calculator</a></li>
+        <li class="menu__item"><a class="menu__link" href="#programmers">Programmers</a></li>
+      </ul>
+     
+    </footer>
+  </main>
+  
+</html>
