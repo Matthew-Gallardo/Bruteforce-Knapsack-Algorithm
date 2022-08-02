@@ -1,2 +1,1 @@
-# daa-project
-this is gui for knapsack
+Knapsack Web based Calculator
